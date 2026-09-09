@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, 'Segoe UI', sans-serif;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #f8fafc;
@@ -25,6 +25,14 @@ body {
   background:
     radial-gradient(circle at top, rgba(99, 102, 241, 0.25), transparent 28%),
     linear-gradient(180deg, #020817 0%, #0f172a 100%);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
 }
 
 img {

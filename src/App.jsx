@@ -3,6 +3,7 @@ import './App.css'
 
 const API_BASE = 'https://api.jikan.moe/v4'
 const ANILIST_URL = 'https://graphql.anilist.co'
+const RESULTS_LIMIT = 22
 
 const categoryFilters = ['All', 'Action', 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'Romance']
 const storageKeys = {
@@ -32,8 +33,8 @@ const normalizeAniListAnime = (media) =>
 
 const fetchJikanAnime = async (query) => {
   const endpoint = query.trim()
-    ? `${API_BASE}/anime?q=${encodeURIComponent(query.trim())}&limit=12&sfw`
-    : `${API_BASE}/top/anime?limit=12&sfw`
+    ? `${API_BASE}/anime?q=${encodeURIComponent(query.trim())}&limit=${RESULTS_LIMIT}&sfw`
+    : `${API_BASE}/top/anime?limit=${RESULTS_LIMIT}&sfw`
 
   const response = await fetch(endpoint)
   if (!response.ok) {
@@ -50,7 +51,7 @@ const fetchAniListAnime = async (query) => {
   const requestBody = {
     query: `
       query ($search: String) {
-        Page(page: 1, perPage: 12) {
+        Page(page: 1, perPage: ${RESULTS_LIMIT}) {
           media(type: ANIME, search: $search, sort: POPULARITY_DESC) {
             id
             title { romaji english }

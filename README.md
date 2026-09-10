@@ -6,11 +6,6 @@ AnimeVerse is a responsive anime discovery app built with React and Vite. It sea
 
 https://xhantimakinta.github.io/anime-app/
 
-## Project guide download
-
-- [Download the complete project guide PDF](docs/AnimeVerse-Project-Guide.pdf)
-- [View the editable HTML guide source](docs/project-guide.html)
-
 ## Features
 
 - Search anime titles with a 250 ms debounced request.
